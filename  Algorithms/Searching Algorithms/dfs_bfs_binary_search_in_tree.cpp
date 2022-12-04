@@ -53,13 +53,25 @@ void BFS(node* root){
         q.pop();
     }
 }
-void DFS(node* root){
+// DFS 
+void Preorder(node* root){
     if(root==NULL)return;
     cout<<root->data<<" ";
-    DFS(root->left);
-    DFS(root->right);
+    Preorder(root->left);
+    Preorder(root->right);
 }
-
+void Inorder(node* root){
+    if(root==NULL)return;
+    Inorder(root->left);
+    cout<<root->data<<" ";
+    Inorder(root->right);
+}
+void Postorder(node* root){
+    if(root==NULL)return;
+    Postorder(root->left);
+    Postorder(root->right);
+    cout<<root->data<<" ";
+}
 
 int main(){
     node* root=NULL ;
